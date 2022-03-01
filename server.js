@@ -18,7 +18,7 @@ const { publicKey, privateKey } = await promisify(generateKeyPair)('rsa', {
 // Print the public key to the admin who just started this app
 console.log(publicKey)
 console.log("Encrypt your secrets using this key and the folowing openssl command:")
-console.log(' echo "<token>" | openssl rsautl -encrypt -oaep -pubin -inkey <rsa_public_key_file> -out github_token.enc')
+console.log(' echo "<token>" | openssl rsautl -encrypt -oaep -pubin -inkey id_rsa.pem.pub -out github_token.enc')
 console.log("^ be careful to keep this space at the beginning of the command to keep the token out of the bash history")
 
 // Start a server to decrypt on demand
